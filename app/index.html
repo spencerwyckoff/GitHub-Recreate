@@ -10,7 +10,7 @@
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
-    <link rel="stylesheet" href="../bower_components/octicons/octicons.css">
+    <link rel="stylesheet" href="../bower_components/octicons/octicons/octicons.css">
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -23,15 +23,81 @@
   <body>
 
     <header>
-      <div class="search-bar">
-        <span>Here we go!</span>
-        <span class="mega-octicon octicon-mark-github"></span>
-      </div>
+      <div class="header-wrapper">
+        <div class="search-container">
+          <span class="mega-octicon octicon-mark-github"></span>
+          <form> 
+            <input class="search-bar" type="text" placeholder="Search GitHub"/>
+          </form>
+          <ul>
+            <a href="#"><li>Explore</li></a>
+            <a href="#"><li>Gist</li></a>
+            <a href="#"><li>Blog</li></a>
+            <a href="#"><li>Help</li></a> 
+          </ul> 
+        </div> 
 
-      <div class="user-nav">
-        
+        <div class="user-nav-container">
+          <ul class="user-nav">
+            <li>
+              <a class="user" href="#">
+                <img src="#">
+                <span>spencerwyckoff</span>
+              </a>
+            </li>
+            
+            <li>
+              <a href="#"><span class="octicon octicon-plus"></span></a>
+            </li>
+            
+            <li>
+              <a href="#"><span class="octicon octicon-inbox"></span></a>
+            </li>
+            
+            <li>
+              <a href="#"><span class="octicon octicon-gear"></span></a>
+            </li>
+            
+            <li>
+              <a href="#"><span class="octicon octicon-sign-out"></span></a>
+            </li>
+          </ul>
+          
+        </div>
       </div>
     </header>
+
+    <!-- Main Body -->
+    <section class="main-container">
+      <!-- Left Quarter -->
+      <section class="left-quarter">
+        
+        <div class="profile-container">
+          <a href=""><img class="profile-pic"></img></a>
+          <h2 class="name">Spencer Wyckoff</h2>
+          <h4 class="username">spencerwyckoff</h4>
+        </div>
+
+        <div class="user-info">
+          
+        </div>
+
+        <div class="user-stats"></div>
+
+        <div class="user-organizations"></div>
+      </section>
+
+      <!-- Right Quarter -->
+      <section class="right-3quarter">
+        <div class="tabs"></div>
+        <div class="content-container">
+          <div class="pop-repos"></div>
+          <div class="repos-cont"></div>
+          <div class="contributions"></div>
+        </div>  
+      </section>
+
+    </section>
 
 
 

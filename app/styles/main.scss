@@ -3,34 +3,120 @@
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
 //Variables
+$light-teal: #F5F5F5;
+$black: #333333;
+$text: #777777;
+$blue: #4183C4;
 
+//MIXINS
+@mixin table-heading {
+  background-color: $light-teal;
+  border-radius: 3px;
+  border: 1px solid #E5E5E5;
+}
 
+@mixin link {
+  text-decoration: none;
+  color: $blue;
+  font-weight: bold;
+  font-size: 13px;
+  &:hover {
+    text-decoration: underline;
+  }
+}
 
-// Custom Styles
-body {
-  background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+@mixin header-links {
+  ul {
+    display: inline-block;
+    margin: 4px 0px 0px 14px;
+    padding: 0;
+    float: left;
+    a {
+      display: inline-block;
+      color: $black;
+      font-weight: bold;
+      padding: 0px 5px;
+      font-size: 13px;
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
 }
 
 
+// Custom Styles
+* {
+  list-style-type: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: #ffffff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333333;
+}
+
+
+////////////////////////////////////////////////
+/*HEADER//////////////////////////////////////*/
 header {
-  @include outer-container;
-  @include span-columns(12);
+  @include table-heading;
+  min-width: 1000px;
+  width: 100%;
+  margin: 0;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  height: 55px;
+  overflow: auto;
 
-  .search-bar { 
-    @include span-columns(6);
-    @include shift(1);
-  }
-  
-  .user-nav {
-    @include span-columns(3);
-    @include shift(9);
-  }
 
-  .octicon {
-    font-size: 40px;
-    width: 30px;
-    height: 30px;
+  .header-wrapper { 
+    @include outer-container;
+    @include span-columns(12);
+    @include header-links;
+
+
+    .search-container {
+      @include span-columns(7);
+      @include shift(1);
+
+      .mega-octicon {
+        font-size: 28px;
+        width: 30px;
+        height: 30px;
+        margin: 0;
+        padding: 0;
+        float: left;
+      }
+      
+      form {
+        display: inline-block;
+        float: left;
+        
+        .search-bar {
+          width: 365px;
+          height: 28px;
+          margin: 3px 0px 0px 6px;
+          border: 1px solid #CCCCCC;
+          border-radius: 3px;
+          background-color: white;
+        }
+      }  
+    }
+
+    .user-nav-container {
+      @include span-columns(4);
+      @include omega();
+      float: right;
+
+      li {
+        float: left;
+        margin: 0px 1px;
+        padding: 2px;
+      }
+    }
   }
 }
