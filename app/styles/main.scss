@@ -2,6 +2,10 @@
 @import '../../bower_components/bourbon/dist/bourbon';
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
+//Variables
+
+
+
 // Custom Styles
 body {
   background: #fafafa;
@@ -17,14 +21,16 @@ header {
   .search-bar { 
     @include span-columns(6);
     @include shift(1);
-
-    .octicon-mark-github {
-      width: 50px;
-      
-    }
   }
   
   .user-nav {
-    @include span-columns(3);}
+    @include span-columns(3);
     @include shift(9);
+  }
+
+  .octicon {
+    font-size: 40px;
+    width: 30px;
+    height: 30px;
+  }
 }
