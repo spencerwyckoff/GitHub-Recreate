@@ -357,7 +357,7 @@ header {
             display: inline-block;
           }
         }
-        
+
         ul {
           float: right;
           margin: 5px 15px 0px 0px;
@@ -366,7 +366,7 @@ header {
             display: inline-block;
             font-size: 14px;
             font-weight: normal;
-            padding: 0px 3px;
+            padding: 0px 2px;
 
             a {
               color: $blue;
@@ -375,6 +375,39 @@ header {
           .active-filter a {
             color: $black;
             font-weight: bold;
+          }
+        }
+
+        .filter-search-bar {
+          
+          
+          input {
+            width: 260px;
+            padding: 6px 15px 8px 15px;
+            display: inline-block;
+            border: 1px solid #D5D5D5;
+            float: left;
+            font-size: 13px;
+            // outline: none;
+          }
+        }
+
+        .filter-search-button {
+          border: 1px solid #D5D5D5;
+          background-color: $light-teal;
+          display: inline-block;
+          margin-left: 5px;
+          padding: 4px 15px 7px 15px;
+          float: left;
+
+          span {
+            color: $black;
+            font-size: 13px;
+            font-weight: bold;
+          }
+          &:hover {
+            background-color: #E1E1E1;
+            border: 1px solid #CCCCCC;
           }
         }
       }
