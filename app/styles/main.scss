@@ -7,6 +7,9 @@ $light-teal: #F5F5F5;
 $black: #333333;
 $dark-grey: #666666;
 $light-grey: #EEEEEE;
+$line-grey: #DDDDDD;
+$table-grey: #D8D8D8;
+$star-grey: #888888;
 $text: #777777;
 $blue: #4183C4;
 
@@ -46,6 +49,50 @@ $blue: #4183C4;
   }
 }
 
+@mixin repo-items {
+  
+  &:hover h4 {
+    text-decoration: underline;
+  }
+  .table {
+    border: 1px solid $table-grey;
+    border-radius: 0;
+    padding: 4px 0px;
+    position: relative;
+    color: $dark-grey;    
+    }
+    span {
+      float: left;
+      padding: 3px 8px
+    }
+    h4 {
+      display: block;
+      color: $blue;
+      font-size: 14px;
+    }
+    p {
+      display: inline-block;
+      font-size: 12px;
+      margin: 5px 0px;;
+    }
+    .starred {
+      position: absolute;
+      top: 14px;
+      right: 10px; 
+      float: right;
+      color: $star-grey;
+      font-size: 15px;
+
+      span {
+        padding: 0px 2px;
+      }
+      .star-text {
+        font-size: 12px;
+        margin-top: 2px;
+      }
+    }
+}
+
 
 // Custom Styles
 * {
@@ -65,6 +112,8 @@ body {
   background: #ffffff;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333333;
+  @include span-columns(12);
+  min-width: 1100px;
 }
 
 
@@ -72,9 +121,11 @@ body {
 /*HEADER//////////////////////////////////////*/
 header {
   @include table-heading;
+  @include span-columns(12);
   min-width: 1000px;
   width: 100%;
   margin: 0;
+  padding-left: 10px;
   padding-bottom: 10px;
   padding-top: 10px;
   height: 55px;
@@ -83,15 +134,9 @@ header {
 
   .header-wrapper { 
     @include outer-container;
-    @include span-columns(12);
     @include header-links;
-
-
     .search-container {
-      @include outer-container;
       @include span-columns(7);
-      @include shift(1);
-
       .mega-octicon {
         font-size: 28px;
         width: 30px;
@@ -99,12 +144,10 @@ header {
         margin: 0;
         padding: 0;
         float: left;
-      }
-      
+      }      
       form {
         display: inline-block;
-        float: left;
-        
+        float: left;        
         .search-bar {
           width: 365px;
           height: 28px;
@@ -115,12 +158,9 @@ header {
         }
       }  
     }
-
     .user-nav-container {
       @include span-columns(4);
-      @include omega();
       float: right;
-
       li {
         float: left;
         margin: 0px 1px;
@@ -132,15 +172,14 @@ header {
 
 ////////////////////////////////////////////////
 /*MAIN CONTENT////////////////////////////////*/
-
 .main-container {
   @include outer-container;
-  @include span-columns(12);
-
+  padding-left: 10px;
+////////////////////////////////////////////////
+/*Left Quarter///////////////////////////////*/
   .left-quarter {
-    @include outer-container;
     @include span-columns(3);
-    @include shift(1);
+    display: inline-block;
     .profile-container {
       border-bottom: 1px solid $light-grey;
       padding: 20px 0px;
@@ -203,13 +242,148 @@ header {
     }
   }
 
+////////////////////////////////////////////////
+/*Right Quarter///////////////////////////////*/
   .right-3quarter {
+    @include span-columns(8);
+    padding: 20px 0px;
+    .edit-profile {
+      @include table-heading;
+      display: inline-block;
+      float: right;
+      font-weight: bold;
+      width: 117px;
+      height: 26px;
+      font-size: 13px;
+      padding: 3px 10px;
+      border: 1px solid #D5D5D5;
+      text-align: center;
 
+      &:hover {
+        background-color: #E0E0E0;
+        border: 1px solid #CCCCCC;
+      }
+      a {
+        color: $black
+      }
+      span {
+        // float: left;
+      }
+      p {
+        display: inline-block;
+      }
+    }
+    .tabs {
+      font-size: 14px;
+      border-bottom: 1px solid $line-grey;
+      ul {
+        display: inline-block;
+        li {
+            display: inline-block;
+            margin-left: 5px;
+            padding: 8px;
+          a {
+            color: $dark-grey; 
+            overflow: auto;            
+            span {
+              display: inline-block;
+              float: left;
+            }
+            h4 {
+              display: inline;
+              font-weight: normal;
+              margin-left: 3px;
+            }
+          }
+        }
+        .selected {
+          border-top: 1px solid $line-grey;
+          border-right: 1px solid $line-grey;
+          border-left: 1px solid $line-grey;
+          border-bottom: 0;
+        }
+        .selected a {
+           color: $black;
+        }
+      }    
+    }
+
+    .tab-content-container {
+      @include outer-container;
+      
+      // .repos-container {
+      //   @include outer-container;
+      //   visibility: hidden;
+
+      //   .pop-repos {
+      //     @include span-columns(4 of 8);
+          
+      //     a {
+      //       @include repo-items;
+      //     }
+      //   }
+        
+      //   .repo-contributed-to {
+      //     @include span-columns(4 of 8);
+        
+      //     a {
+      //       @include repo-items;
+      //     }
+      //   }
+      // }
+      .filter-bar {
+        display: block;
+        border-bottom: 1px solid $line-grey;
+        padding: 15px 0px 10px 0px;
+        overflow: auto;
+
+        .new-button {
+          display: inline-block;
+          float: right;
+          width: 68px;
+          height: 34px;
+          background-color: #39BD45;
+          border: 1px solid #32B33F;
+          color: white;
+          padding: 8px 11px;
+          font-weight: bold;
+          font-size: 13px;
+
+          &:hover {
+            background-color: #5CA841;
+            color: white;
+          }
+          p {
+            display: inline-block;
+          }
+        }
+        
+        ul {
+          float: right;
+          margin: 5px 15px 0px 0px;
+          li {
+            @include link;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: normal;
+            padding: 0px 3px;
+
+            a {
+              color: $blue;
+            }
+          }
+          .active-filter a {
+            color: $black;
+            font-weight: bold;
+          }
+        }
+      }
+    }
   }
 }
 
-////////////////////////////////////////////////
-/*Left Quarter////////////////////////////////*/
+
+
 
 ////////////////////////////////////////////////
 /*Footer////////////////////////////////*/
