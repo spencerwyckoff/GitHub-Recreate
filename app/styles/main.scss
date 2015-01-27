@@ -415,6 +415,69 @@ header {
   }
 }
 
+.repo-list {
+  
+  ul {
+    
+    li {
+      padding: 25px 0px;
+      border-bottom: 1px solid $light-grey;
+      overflow: auto;
+      position: relative;
+
+      a {
+        display: inline-block;
+        color: $blue;
+        font-size: 20px;
+        font-weight: bold;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+        
+      .side-tags {
+        display: inline-block;
+        color: $star-grey;
+        font-weight: bold;
+        font-size: 12px;
+        position: absolute;
+        top: 35px;
+        right: 0px;
+
+        span {
+          display: inline-block;
+          margin-left: 5px;
+        }
+        .stars {
+          display: inline-block;
+          margin-left: 5px;
+          span {
+            margin: 0px;
+          }
+        }
+        .branches {
+          display: inline-block;
+          margin-left: 5px;
+          span {
+            margin: 0px;
+          }
+        }
+      }
+
+      .description {
+        color: $dark-grey;
+        font-size: 14px; 
+        padding: 10px 0px;
+      }
+      .updated {
+        color: $star-grey;
+        font-size: 13px;
+        padding: 5px 0px; 
+      }
+    }
+  }
+}
+
 
 
 

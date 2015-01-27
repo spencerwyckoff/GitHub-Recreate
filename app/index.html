@@ -179,40 +179,65 @@
                 </ul>
               </div>
           </div> -->
-            <div class="filter-bar">
-              <a href="#" class="new-button">
-                <span class="octicon octicon-repo"></span>
-                <p>New</p>
-              </a>
-              <ul class="filters">
-                <li class="active-filter">
-                  <a href="#">All</a>
-                </li>
-                <li>
-                  <a href="#">Public</a>
-                </li>
-                <li>
-                  <a href="#">Private</a>
-                </li>
-                <li>
-                  <a href="#">Sources</a>
-                </li>
-                <li>
-                  <a href="#">Forks</a>
-                </li>
-                <li>
-                  <a href="#">Mirrors</a>
-                </li>
-              </ul>
-              <form class="filter-search-bar">
-                <input placeholder="Find a repository..." />
-              </form>
-              <a href="#">
-                <div class="filter-search-button">
-                  <span>Search</span>
+          <div class="filter-bar">
+            <a href="#" class="new-button">
+              <span class="octicon octicon-repo"></span>
+              <p>New</p>
+            </a>
+            <ul class="filters">
+              <li class="active-filter">
+                <a href="#">All</a>
+              </li>
+              <li>
+                <a href="#">Public</a>
+              </li>
+              <li>
+                <a href="#">Private</a>
+              </li>
+              <li>
+                <a href="#">Sources</a>
+              </li>
+              <li>
+                <a href="#">Forks</a>
+              </li>
+              <li>
+                <a href="#">Mirrors</a>
+              </li>
+            </ul>
+            <form class="filter-search-bar">
+              <input placeholder="Find a repository..." />
+            </form>
+            <a href="#">
+              <div class="filter-search-button">
+                <span>Search</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="repo-list">
+            <ul>
+              <li>
+                <a href="#">GitHub-Recreate</a>
+                <div class="side-tags">
+                  <span>Javascript</span>
+                  <div class="stars">
+                    <span class="octicon octicon-star"></span>
+                    <span>0</span>
+                  </div>
+                  <div class="branches">
+                    <span class="octicon octicon-git-branch"></span>
+                    <span>0</span>
+                  </div>
                 </div>
-              </a>
-            </div>
+                <p class="description">
+                  Recreate our personal GitHub page using HTML, Sass, Neat, and JS
+                </p>
+                <p class="updated">
+                  Updated 16 hours ago
+                </p>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -259,6 +284,9 @@
     <!-- endbuild -->
 
         <!-- build:js scripts/main.js -->
+        <script src="scripts/repo.js"></script>
+        <script src="scripts/user.js"></script>
+        <script src="scripts/org.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
 </body>
