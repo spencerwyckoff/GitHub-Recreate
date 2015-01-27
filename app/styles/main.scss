@@ -186,6 +186,16 @@ header {
         }
       }
     }
+    .user-organizations {
+      padding: 15px 0px;
+      border-bottom: 1px solid $light-grey;
+      h4 {}
+      img {
+        height: 42px;
+        width: 42px;
+        margin: 15px 0px; 
+      }
+    }
   }
 
   .right-3quarter {
