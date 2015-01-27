@@ -144,17 +144,24 @@ header {
         width: 230px;
         height: 230px;
         border-radius: 5px;
-
       }
-
-      h2 {
-
-      }
-
       h4 {
         font-weight: 200;
         color: $dark-grey;
         font-size: 20px;
+      }
+    }
+    .user-info {
+      padding: 15px 0px;
+      border-bottom: 1px solid $light-grey;
+      span {
+        font-size: 16px;
+      }
+      p {
+        display: inline-block;
+        font-size: 14px;
+        padding: 3px 0px;
+        margin-left: 5px;
       }
     }
   }
