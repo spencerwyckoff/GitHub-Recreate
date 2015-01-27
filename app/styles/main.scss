@@ -175,14 +175,19 @@ header {
         display: inline-block;
         text-align: center;
         padding: 0px 15px;
+        color: #999999;
+
         h3 {
           color: $blue;
           font-size: 28px;
           font-weight: 700;
+          line-height: 1;
         }
         span {
-          font-size: 10px;
-          color: #999999;
+          font-size: 11px;
+        }
+        &:hover {
+          color: $blue;
         }
       }
     }
@@ -206,9 +211,62 @@ header {
 ////////////////////////////////////////////////
 /*Left Quarter////////////////////////////////*/
 
+////////////////////////////////////////////////
+/*Footer////////////////////////////////*/
 
+footer {
+  @include outer-container;
+  @include span-columns(12);
+  .footer-wrapper {
+    @include outer-container;
+    @include span-columns(12);
+    @include shift(1);
+    @include link;
 
+    .left-footer {
+      float: left;
+      ul {
 
+        li {
+          display: inline-block;
+          font-weight: normal;
+          font-size: 12px;
+          padding: 5px;
+          a {
+            color: $blue;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    span {
+      display: inline-block;
+      color: #CCCCCC;
+      height: 24px;
+      width: 24px;
+      margin: 0px auto;
+    }
+    .right-footer {
+      float: right;
+      ul {
+        li {
+          display: inline-block;
+          font-weight: normal;
+          font-size: 12px;
+          padding: 5px;
+          a {
+            color: $blue;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 
 
