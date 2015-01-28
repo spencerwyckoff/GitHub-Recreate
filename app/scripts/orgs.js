@@ -1,4 +1,4 @@
-var org = [
+var orgs = [
 {
 "login": "tiy-atl-js-q1-2015",
 "id": 10352544,
